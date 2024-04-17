@@ -89,7 +89,7 @@ export default function SignupPage() {
                         placeholder="Password"
                     />
                 </div>
-                <button onClick={onSignup} type="submit" className={btnClass}>{buttonDisabled && !loading ? "Fill All Details" : !loading ? "Submit" : ""}</button>
+                <button onClick={onSignup} type="submit" disabled={buttonDisabled} className={btnClass}>{buttonDisabled && !loading ? "Fill All Details" : !loading ? "Submit" : ""}</button>
                 <p className="mt-4">Already a user? <Link href="/login">Login</Link></p>                
             </form>
         </div>
