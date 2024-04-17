@@ -32,10 +32,7 @@ export default function VerifyEmail() {
 
     return (
         <div className="container">
-
-            <h1 className="text-4xl">Verify Email</h1>
-            <h2 className="p-2 bg-orange-500 text-black">{token ? `${token}` : "no token"}</h2>
-
+            <h1 className="mt-3 mb-3">Verify Email</h1>
             {verified && (
                 <div>
                     <h2 className="text-2xl">Email Verified</h2>
@@ -46,7 +43,7 @@ export default function VerifyEmail() {
             )}
             {error && (
                 <div>
-                    <h2 className="text-2xl bg-red-500 text-black">Error</h2>
+                    <h2 className="text-2xl bg-red-500 text-black">Error verifying mail</h2>
                 </div>
             )}
         </div>
