@@ -33,7 +33,15 @@ const blogSchema = new mongoose.Schema({
     author: {
         type: String,
         ref: "users",
-    }
+    },
+    likes: {
+        type: Number,
+        default: 0
+    },
+    comments: {
+        type: Number,
+        default: 0
+    },
 });
 
 const Blog = mongoose.models.blogs || mongoose.model("blogs", blogSchema);

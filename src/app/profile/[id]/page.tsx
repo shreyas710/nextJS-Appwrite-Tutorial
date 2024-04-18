@@ -5,6 +5,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FaPencilAlt } from "react-icons/fa";
+import {FaThumbsUp} from "react-icons/fa";
+import { FaComment } from "react-icons/fa";
 import Link from "next/link";
 
 export default function UserProfile({params}: any) {
@@ -137,7 +139,7 @@ export default function UserProfile({params}: any) {
             <nav className="navbar">
                 <h3 className="mt-3 mb-3">Hello <span style={{color: "orange"}}>{user}</span></h3>
 
-                <button onClick={writeBlog} className="btn btn-warning"><FaPencilAlt/> Write a New Blog</button>
+                <button onClick={writeBlog} className="btn btn-warning ms-auto me-3"><FaPencilAlt/> Write a New Blog</button>
                 <button onClick={logout} className="btn btn-primary">Logout</button>
             </nav>
 <div className="row g-5">
@@ -150,7 +152,15 @@ export default function UserProfile({params}: any) {
                         <h2 className="blog-post-title"><Link href="#">{blog.title}</Link></h2>
                         <p className="blog-post-meta">{blog.createdAt} by <strong>{blog.author}</strong> in <em>{blog.category}</em></p>
                         <p>{blog.summContent}</p>
-                        <br />
+                        <div className="row">
+                            <div className="col-4">
+                                <FaThumbsUp/> : {blog.likes}
+                            </div>
+                            <div className="col-4">
+                                <FaComment/> : {blog.comments}
+                            </div>
+                        </div>
+                        <hr />
                     </div>
                 )
                 
