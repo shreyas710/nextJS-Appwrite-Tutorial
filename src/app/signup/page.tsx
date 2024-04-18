@@ -36,7 +36,7 @@ export default function SignupPage() {
                 });
                 return;
             }
-            toast.success("User created. Please login", {
+            toast.success("User created. Please verify mail", {
                 style: {
                     borderRadius: '10px',
                     backgroundColor: "#4caf50",
@@ -74,7 +74,7 @@ export default function SignupPage() {
 
     return (
         <div className="container">
-            <h1 className="mt-3 mb-3">Sign Up</h1>
+            <h3 className="mt-3 mb-3">Sign Up</h3>
             <form>
                 <div className="form-group mb-4">
                     <label htmlFor="username" className="mb-2">User Name</label>

@@ -66,7 +66,7 @@ export default function ResetPassword() {
 
     return (
         <div className="container">
-            <h1 className="mt-3 mb-3">Reset Password</h1>
+            <h3 className="mt-3 mb-3">Reset Password</h3>
             {!resetpwd && (
                 <form>
                     <div className="form-group mb-4">

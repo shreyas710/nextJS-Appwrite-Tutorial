@@ -72,7 +72,7 @@ export default function LoginPage() {
 
     return (
         <div className="container">
-            <h1 className="mt-3 mb-3">Enter Email ID</h1>
+            <h3 className="mt-3 mb-3">Enter Email ID</h3>
             <form>
                 <div className="form-group mb-4">
                     <label htmlFor="username" className="mb-2">Email</label>

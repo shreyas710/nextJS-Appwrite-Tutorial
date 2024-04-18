@@ -83,7 +83,7 @@ export default function UserProfile({params}: any) {
     return (
          <div className="container">
             <nav className="navbar">
-                <h1 className="mt-3 mb-3">Hello <span style={{color: "orange"}}>{user}</span></h1>
+                <h3 className="mt-3 mb-3">Hello <span style={{color: "orange"}}>{user}</span></h3>
                 <button onClick={logout} className="btn btn-primary">Logout</button>
             </nav>
         </div>
