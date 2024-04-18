@@ -3,40 +3,16 @@
 import {useEffect} from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 export default function ProfilePage() {
     const router = useRouter();
+
     const logout = async () => {
         try {
-            const response = await axios.get("/api/users/logout");
-            if (response.data.success) {
-                toast.success(response.data.message,{
-                    style: {
-                        borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
-                    },
-                });
-            } else {
-                toast.error(response.data.message, {
-                    style: {
-                        borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
-                    },
-                });
-            }
+            await axios.get("/api/users/logout");
             router.push("/login");
         } catch (error: any) {
             console.log("Error logging out", error.message);
-            toast.error("Error logging out", {
-                style: {
-                    borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
-                },
-            });
         }
     }
 
@@ -44,10 +20,8 @@ export default function ProfilePage() {
         const response = await axios.get("/api/users/me");
         console.log(response.data);
         if(response.data.user._id) {
-            toast.success(response.data.message);
             router.push(`/profile/${response.data.user._id}`);
         } else {
-            toast.error(response.data.message);
             router.push("/login");
         }
     };

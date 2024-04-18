@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
+import { Toaster } from 'react-hot-toast';
 
 import BootstrapClient from '@/app/BootstrapClient';
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Toaster/>
         {children}
         <BootstrapClient/>
       </body>

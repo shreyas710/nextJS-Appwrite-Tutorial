@@ -12,7 +12,7 @@ export default function UserProfile({params}: any) {
 
     useEffect(() => {   
         getUserNameFromId();
-    });
+    }, []);
 
     const getUserNameFromId = async () => {
         try {
@@ -71,12 +71,12 @@ export default function UserProfile({params}: any) {
         } catch (error: any) {
             console.log("Error logging out", error.message);
              toast.error("Error logging out", {
-                    style: {
-                        borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
-                    },
-                });
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
         }
     }
 

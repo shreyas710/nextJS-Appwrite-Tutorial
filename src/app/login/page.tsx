@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import classNames from "classnames";
-import toast, {Toaster} from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -66,7 +66,6 @@ export default function LoginPage() {
 
     return (
         <div className="container">
-            <Toaster/>
             <h1 className="mt-3 mb-3">Log In</h1>
             <form>
                 <div className="form-group mb-4">

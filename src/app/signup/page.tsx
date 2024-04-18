@@ -26,11 +26,33 @@ export default function SignupPage() {
             setLoading(true);
             const response = await axios.post("/api/users/signup", user);
             console.log("Response", response.data);
-            toast.success("User created successfully");
+            if(response.data.error) {
+                toast.error(response.data.error, {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
+                return;
+            }
+            toast.success("User created. Please login", {
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
             router.push("/login");
         } catch(error: any) {
             console.log("Error signing up", error.message);
-            toast.error("Error signing up");
+            toast.error("Error signing up", {
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
         } finally {
             setLoading(false);
         }
