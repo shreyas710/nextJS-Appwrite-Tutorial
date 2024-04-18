@@ -28,7 +28,12 @@ export default function LoginPage() {
                 toast.error("User not found");
                 return;
             }
-            toast.success("User data fetched successfully");
+            toast.success("Reset link has been mailed", {
+                style: {
+                    backgroundColor: "#4caf50",
+                    color: "#ffffff",
+                },
+            });
             router.push("/login");
         } catch(error: any) {
             console.log("Error fetching user data", error.message);

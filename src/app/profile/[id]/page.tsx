@@ -18,11 +18,11 @@ export default function UserProfile({params}: any) {
         try {
             const response = await axios.get(`/api/users/me`);
             if(response.data.user._id) {
-                toast.success(response.data.message,{
+                toast.success("Logged in successfully",{
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#4caf50",
+                        color: "#ffffff",
                     },
                 });
                 setUser(response.data.user.username);
@@ -30,8 +30,8 @@ export default function UserProfile({params}: any) {
                 toast.error(response.data.message, {
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#f44336",
+                        color: "#ffffff",
                     },
                 });
             }
@@ -40,8 +40,8 @@ export default function UserProfile({params}: any) {
             toast.error("Error logging out", {
                 style: {
                     borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
                 },
             });
         }
@@ -54,16 +54,16 @@ export default function UserProfile({params}: any) {
                  toast.success(response.data.message,{
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#4caf50",
+                        color: "#ffffff",
                     },
                 });
             } else {
                  toast.error(response.data.message, {
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#f44336",
+                        color: "#ffffff",
                     },
                 });
             }
@@ -73,8 +73,8 @@ export default function UserProfile({params}: any) {
              toast.error("Error logging out", {
                 style: {
                     borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
                 },
             });
         }

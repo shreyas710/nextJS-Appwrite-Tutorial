@@ -29,8 +29,8 @@ export default function LoginPage() {
                 toast.error(response.data.error, {
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#f44336",
+                        color: "#ffffff",
                     },
                 });
                 return;
@@ -41,8 +41,8 @@ export default function LoginPage() {
             toast.error("Error logging in", {
                 style: {
                     borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
                 },
             });
         } finally {

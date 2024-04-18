@@ -30,8 +30,8 @@ export default function SignupPage() {
                 toast.error(response.data.error, {
                     style: {
                         borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
+                        backgroundColor: "#f44336",
+                        color: "#ffffff",
                     },
                 });
                 return;
@@ -39,8 +39,8 @@ export default function SignupPage() {
             toast.success("User created. Please login", {
                 style: {
                     borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    backgroundColor: "#4caf50",
+                    color: "#ffffff",
                 },
             });
             router.push("/login");
@@ -49,8 +49,8 @@ export default function SignupPage() {
             toast.error("Error signing up", {
                 style: {
                     borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
                 },
             });
         } finally {
