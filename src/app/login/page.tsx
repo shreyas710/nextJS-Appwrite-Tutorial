@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import classNames from "classnames";
-import toast from "react-hot-toast";
+import toast, {Toaster} from "react-hot-toast";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -25,12 +25,26 @@ export default function LoginPage() {
             setLoading(true);
             const response = await axios.post("/api/users/login", user);
             console.log("Response", response.data);
-            toast.success("Logged in successfully");
-            // router.refresh();
+            if(response.data.error) {
+                toast.error(response.data.error, {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
+                return;
+            }
             router.push("/profile");
         } catch(error: any) {
             console.log("Error logging in", error.message);
-            toast.error("Error logging in");
+            toast.error("Error logging in", {
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
         } finally {
             setLoading(false);
         }
@@ -52,6 +66,7 @@ export default function LoginPage() {
 
     return (
         <div className="container">
+            <Toaster/>
             <h1 className="mt-3 mb-3">Log In</h1>
             <form>
                 <div className="form-group mb-4">

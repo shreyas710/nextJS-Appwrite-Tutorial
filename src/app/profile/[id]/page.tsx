@@ -18,14 +18,32 @@ export default function UserProfile({params}: any) {
         try {
             const response = await axios.get(`/api/users/me`);
             if(response.data.user._id) {
-                toast.success(response.data.message);
+                toast.success(response.data.message,{
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
                 setUser(response.data.user.username);
             } else {
-                toast.error(response.data.message);
+                toast.error(response.data.message, {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
             }
         } catch(error: any) {
             console.log("Error getting user data", error.message);
-            toast.error("Error getting user data");
+            toast.error("Error logging out", {
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
         }
     }
 
@@ -33,14 +51,32 @@ export default function UserProfile({params}: any) {
         try {
             const response = await axios.get("/api/users/logout");
             if (response.data.success) {
-                toast.success(response.data.message);
+                 toast.success(response.data.message,{
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
             } else {
-                toast.error(response.data.message);
+                 toast.error(response.data.message, {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
             }
             router.push("/login");
         } catch (error: any) {
             console.log("Error logging out", error.message);
-            toast.error("Error logging out");
+             toast.error("Error logging out", {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                });
         }
     }
 
