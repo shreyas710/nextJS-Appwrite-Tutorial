@@ -25,5 +25,6 @@ export const config = {
         '/signup',
         '/verifyemail',
         '/resetpassword',
+        '/writeblog',
     ]
 }
