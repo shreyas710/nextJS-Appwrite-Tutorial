@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
+import toast from "react-hot-toast";
 
 export default function ResetPassword() {
     const [token, setToken] = useState("");
@@ -34,9 +35,23 @@ export default function ResetPassword() {
             setLoading(true);
             await axios.post("/api/users/resetpassword", {token, password});
             setResetpwd(true);
+            toast.success("Password reset. Please Login", {  
+                style: {
+                    borderRadius: '10px',
+                    backgroundColor: "#4caf50",
+                    color: "#ffffff",
+                },
+            });
         } catch (error: any) {
             console.log("Error resetting password", error.response.data);
             setError(true);
+            toast.error("Error resetting password", {
+                style: {
+                    borderRadius: '10px',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
+                },
+            });
         } finally {
             setLoading(false);
         }
@@ -71,7 +86,6 @@ export default function ResetPassword() {
             
             {resetpwd && (
                 <div>
-                    <h2 className="text-2xl">Password reset successfully</h2>
                     <Link href="/login">
                         Login
                     </Link>

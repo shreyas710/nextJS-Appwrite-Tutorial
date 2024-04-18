@@ -4,6 +4,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 export default function VerifyEmail() {
     const [token, setToken] = useState("");
@@ -25,6 +26,13 @@ export default function VerifyEmail() {
         try {
             await axios.post("/api/users/verifyemail", {token});
             setVerified(true);
+            toast.success("Email verified", {
+                style: {
+                    borderRadius: '10px',
+                    backgroundColor: "#4caf50",
+                    color: "#ffffff",
+                },
+            });
         } catch (error: any) {
             console.log("Error verifying email", error.response.data);
             setError(true);
@@ -36,7 +44,6 @@ export default function VerifyEmail() {
             <h1 className="mt-3 mb-3">Verify Email</h1>
             {verified && (
                 <div>
-                    <h2 className="text-2xl">Email Verified</h2>
                     <Link href="/login">
                         Login
                     </Link>

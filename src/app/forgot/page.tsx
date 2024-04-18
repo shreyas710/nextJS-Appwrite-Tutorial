@@ -25,11 +25,18 @@ export default function LoginPage() {
             const response = await axios.post("/api/users/me", user);
             console.log(response.data.user);
             if(response.data.user === undefined) {
-                toast.error("User not found");
+                toast.error("User not found", {
+                    style: {
+                        borderRadius: '10px',
+                        backgroundColor: "#f44336",
+                        color: "#ffffff",
+                    },
+                });
                 return;
             }
             toast.success("Reset link has been mailed", {
                 style: {
+                    borderRadius: '10px',
                     backgroundColor: "#4caf50",
                     color: "#ffffff",
                 },
@@ -37,11 +44,16 @@ export default function LoginPage() {
             router.push("/login");
         } catch(error: any) {
             console.log("Error fetching user data", error.message);
-            toast.error("Error fetching user data");
+            toast.error("Error fetching user data", {
+                style: {
+                    borderRadius: '10px',
+                    backgroundColor: "#f44336",
+                    color: "#ffffff",
+                },
+            });
         } finally {
             setLoading(false);
         }
-        
     }
     
     useEffect(() => {
