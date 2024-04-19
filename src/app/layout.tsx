@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 import BootstrapClient from '@/app/BootstrapClient';
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar/>
         <Toaster/>
         {children}
+        <Footer/>
         <BootstrapClient/>
       </body>
     </html>
