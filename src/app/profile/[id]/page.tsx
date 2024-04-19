@@ -137,7 +137,7 @@ export default function UserProfile({params}: any) {
     return (
          <div className="container">
             <nav className="navbar">
-                <h3 className="mt-3 mb-3">Hello <span style={{color: "orange"}}>{user}</span></h3>
+                <h3 className="mt-3 mb-3 fw-bold">Hello <span style={{color: "orange"}}>{user}</span></h3>
 
                 <button onClick={writeBlog} className="btn btn-warning ms-auto me-3"><FaPencilAlt/> Write a New Blog</button>
                 <button onClick={logout} className="btn btn-primary">Logout</button>

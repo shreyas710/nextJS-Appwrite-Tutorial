@@ -41,7 +41,7 @@ export default function VerifyEmail() {
 
     return (
         <div className="container">
-            <h3 className="mt-3 mb-3">Verify Email</h3>
+            <h3 className="mt-3 mb-3 fw-bold">Verify Email</h3>
             {verified && (
                 <div>
                     <Link href="/login">

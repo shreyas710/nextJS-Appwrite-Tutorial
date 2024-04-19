@@ -74,7 +74,7 @@ export default function SignupPage() {
 
     return (
         <div className="container">
-            <h3 className="mt-3 mb-3">Sign Up</h3>
+            <h3 className="mt-3 mb-3 fw-bold">Sign Up</h3>
             <form>
                 <div className="form-group mb-4">
                     <label htmlFor="username" className="mb-2">User Name</label>
@@ -82,7 +82,7 @@ export default function SignupPage() {
                         type="text" 
                         value={user.username} 
                         onChange={(e) => setUser({...user, username: e.target.value})} 
-                        className="form-control" 
+                        className="form-control w-25" 
                         id="username" 
                         placeholder="Enter username"
                     />
@@ -93,7 +93,7 @@ export default function SignupPage() {
                         type="email" 
                         value={user.email} 
                         onChange={(e) => setUser({...user, email: e.target.value})}
-                        className="form-control" 
+                        className="form-control w-25" 
                         id="email" 
                         aria-describedby="emailHelp" 
                         placeholder="Enter email"
@@ -106,7 +106,7 @@ export default function SignupPage() {
                         type="password" 
                         value={user.password} 
                         onChange={(e) => setUser({...user, password: e.target.value})}
-                        className="form-control" 
+                        className="form-control w-25" 
                         id="password" 
                         placeholder="Password"
                     />

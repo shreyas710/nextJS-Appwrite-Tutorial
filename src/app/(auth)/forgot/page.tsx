@@ -72,7 +72,7 @@ export default function LoginPage() {
 
     return (
         <div className="container">
-            <h3 className="mt-3 mb-3">Enter Email ID</h3>
+            <h3 className="mt-3 mb-3 fw-bold">Enter Email ID</h3>
             <form>
                 <div className="form-group mb-4">
                     <label htmlFor="username" className="mb-2">Email</label>
@@ -80,7 +80,7 @@ export default function LoginPage() {
                         type="text" 
                         value={user.email} 
                         onChange={(e) => setUser({...user, email: e.target.value})} 
-                        className="form-control" 
+                        className="form-control w-25" 
                         id="username" 
                         placeholder="Enter email"
                     />

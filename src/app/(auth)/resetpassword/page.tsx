@@ -66,7 +66,7 @@ export default function ResetPassword() {
 
     return (
         <div className="container">
-            <h3 className="mt-3 mb-3">Reset Password</h3>
+            <h3 className="mt-3 mb-3 fw-bold">Reset Password</h3>
             {!resetpwd && (
                 <form>
                     <div className="form-group mb-4">
@@ -75,7 +75,7 @@ export default function ResetPassword() {
                             type="password" 
                             value={password} 
                             onChange={(e) => setPassword(e.target.value)} 
-                            className="form-control" 
+                            className="form-control w-25" 
                             id="password" 
                             placeholder="Enter password"
                         />
