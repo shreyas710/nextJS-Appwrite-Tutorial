@@ -75,7 +75,7 @@ export default function ResetPassword() {
                             type="password" 
                             value={password} 
                             onChange={(e) => setPassword(e.target.value)} 
-                            className="form-control w-25" 
+                            className="form-control" 
                             id="password" 
                             placeholder="Enter password"
                         />

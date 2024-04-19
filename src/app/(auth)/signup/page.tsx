@@ -82,7 +82,7 @@ export default function SignupPage() {
                         type="text" 
                         value={user.username} 
                         onChange={(e) => setUser({...user, username: e.target.value})} 
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="username" 
                         placeholder="Enter username"
                     />
@@ -93,7 +93,7 @@ export default function SignupPage() {
                         type="email" 
                         value={user.email} 
                         onChange={(e) => setUser({...user, email: e.target.value})}
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="email" 
                         aria-describedby="emailHelp" 
                         placeholder="Enter email"
@@ -106,7 +106,7 @@ export default function SignupPage() {
                         type="password" 
                         value={user.password} 
                         onChange={(e) => setUser({...user, password: e.target.value})}
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="password" 
                         placeholder="Password"
                     />

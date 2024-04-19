@@ -80,7 +80,7 @@ export default function LoginPage() {
                         type="text" 
                         value={user.email} 
                         onChange={(e) => setUser({...user, email: e.target.value})} 
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="username" 
                         placeholder="Enter email"
                     />

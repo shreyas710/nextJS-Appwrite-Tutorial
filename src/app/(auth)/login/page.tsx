@@ -74,7 +74,7 @@ export default function LoginPage() {
                         type="text" 
                         value={user.username} 
                         onChange={(e) => setUser({...user, username: e.target.value})} 
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="username" 
                         placeholder="Enter username"
                     />
@@ -85,7 +85,7 @@ export default function LoginPage() {
                         type="password" 
                         value={user.password} 
                         onChange={(e) => setUser({...user, password: e.target.value})}
-                        className="form-control w-25" 
+                        className="form-control" 
                         id="password" 
                         placeholder="Password"
                     />
